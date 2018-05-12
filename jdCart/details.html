@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>details</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div id="wrap">
+		<!-- <div class="details-box clearfix" id="details">
+			<div class="details-l">
+				<div class="details-img">
+					<a href="#">
+						<img src="imgs/apple.jpg">
+					</a>
+					<div id="filter">
+					</div>
+				</div>
+				<div id="max">
+					<img src="imgs/apple.jpg" alt="">
+				</div> 
+				<ul class="details-sm clearfix">
+					<li>
+						<img src="imgs/sm-pguo.jpg" alt="" data-src="imgs/apple.jpg">
+					</li>
+					<li>
+						<img src="imgs/sm-pguo2.jpg" alt="" data-src="imgs/big-pguo2.jpg">
+					</li>
+					<li>
+						<img src="imgs/sm-pguo3.jpg" alt="" data-src="imgs/big-pguo3.jpg">
+					</li>
+					<li>
+						<img src="imgs/sm-pguo4.jpg" alt="" data-src="imgs/big-pguo4.jpg">
+					</li>
+				</ul>
+			</div>
+			<div class="details-info">
+				<p class="details-tit">
+					小米MIX2 全面屏游戏手机 6GB+64GB 黑色 全网通4G手机 双卡双待
+				</p>
+				<p class="det-price">
+					<span>京 东 价 </span>
+					<span class="yuan">￥</span>
+					<span class="details-price"> 2599.00</span>
+				</p>
+				<div class="choose-btns">
+					<div class="choose-amount">
+						<input type="text" class="buy-num" value="1">
+						<a class="btn-add">+</a>
+						<a class="btn-reduce">-</a>
+					</div> 
+					<a class="addCart-btn">加入购物车</a>
+				</div>
+			</div>
+		</div> -->
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	var data = [
+		{'id':'01','img':'imgs/listpro1.jpg', 'pName': '小米MIX2 全面屏游戏手机 6GB+64GB 黑色 全网通4G手机 双卡', 'color':'黑', 'size': '6GB 64GB', 'unitPrice': '¥2899.00', 'num': '1', 'sum':'¥2899.00'},
+		{'id':'02','img': 'imgs/hengshi.jpg', 'pName': '亨氏 (Heinz) 宝宝辅食 婴儿米粉 婴儿营养米粉超值装 (辅食添加初期-36个月适用)400g', 'color': '婴儿原味-400g', 'unitPrice':'¥40.00', 'num':'4', 'sum': '¥160.00'},
+		{'id':'03','img': 'imgs/xifa.jpg', 'pName': '沙宣无硅油洗发水轻润裸感500ml（即享沙龙级净澈）', 'color': '轻润裸感500ml', 'unitPrice': '¥59.80', 'num': '1', 'sum':'¥59.80'},
+		{'id': '04', 'img': 'imgs/apple.jpg', 'big1':'imgs/apple.jpg', 'sm1':'imgs/sm-pguo.jpg', 'big2':'imgs/big-pguo2.jpg', 'sm2':'imgs/sm-pguo2.jpg', 'big3':'imgs/big-pguo3.jpg', 'sm3':'imgs/sm-pguo3.jpg', 'big4':'imgs/big-pguo4.jpg', 'sm4':'imgs/sm-pguo4.jpg', 'pName': 'Apple 苹果 iPhone X 全面屏手机 深空灰色 全网通 64GB', 'color': '深空灰色', 'unitPrice': '¥7528.00', 'num': '1', 'sum': '¥7528.00'}
+	];
+	var id = (location.href).split("?")[1].split("=")[1];
+	var str = '';
+	for(let i = 0; i < data.length; i++) {
+		if(data[i].id == id) {
+		str += '<div class="details-box clearfix" id="'+data[i].id+'">\
+				<div class="details-l">\
+					<div class="details-img" id="middle-box">\
+						<a href="#">\
+							<img src="'+data[i].img+'" id="middle-img">\
+						</a>\
+						<div id="filter"></div>\
+					</div> \
+					<div id="max">\
+						<img src="imgs/apple.jpg" alt="" id="max-img">\
+					</div> \
+					<ul class="details-sm clearfix">\
+						<li class="img-item">\
+							<img src="'+data[i].sm1+'" alt="" data-src="'+data[i].big1+'">\
+						</li>\
+						<li class="img-item">\
+							<img src="'+data[i].sm2+'" alt="" data-src="'+data[i].big2+'">\
+						</li>\
+						<li class="img-item">\
+							<img src="'+data[i].sm3+'" alt="" data-src="'+data[i].big3+'">\
+						</li>\
+						<li class="img-item">\
+							<img src="'+data[i].sm4+'" alt="" data-src="'+data[i].big4+'">\
+						</li>\
+					</ul>\
+				</div>\
+				<div class="details-info">\
+					<p class="details-tit">'+data[i].pName+'</p>\
+					<p class="det-price">\
+						<span>京 东 价 </span>\
+						<span class="details-price"> '+data[i].unitPrice+'</span>\
+					</p>\
+					<div class="choose-btns">\
+						<div class="choose-amount">\
+							<input type="text" class="buy-num" value="1">\
+							<a class="btn-add">+</a>\
+							<a class="btn-reduce">-</a>\
+						</div> \
+						<a class="addCart-btn">加入购物车</a>\
+					</div>\
+				</div>\
+			</div>'
+		}
+
+	}
+	var wrap = document.getElementById('wrap');
+	wrap.innerHTML = str;
+	//放大镜
+	//1:2:4（filter:中图：大图）的比例，否则有白边，动的元素/不占位的都绝对定位，
+	var aImg = document.querySelectorAll('.img-item');//li，父级ul跟middleBox同级
+	var middleImg = document.getElementById('middle-img');
+	var filter = document.getElementById('filter');//middle-box里面绝对定位
+	var maxImg = document.getElementById('max-img');
+	var maxBox = document.getElementById('max');//跟middleBox同级，绝对定位
+	var middleBox = document.getElementById('middle-box');
+	//因为父元素相对定位了;offsetLeft是距离最近定位祖先元素的距离So,-mBoxParent.offsetLeft
+	var mBoxParent = middleBox.parentNode;
+	middleBox.onmouseover = function() {
+		filter.style.display = 'block';
+		maxBox.style.display = 'block';
+		middleBox.onmousemove = function(e) {
+			var e = e || event;
+			let l = e.clientX - mBoxParent.offsetLeft - filter.offsetWidth/2;
+			let t = e.clientY - mBoxParent.offsetTop - filter.offsetHeight/2;
+			//判断：移动最大距离为两者的高/宽度差，如果移动超过了高度差就赋值为两者的高度差；小于0，就赋值0
+			t = (t > middleBox.offsetHeight - filter.offsetHeight) ? middleBox.offsetHeight - filter.offsetHeight : (t < 0 ? 0 : t);
+			l = (l > middleBox.offsetWidth - filter.offsetWidth) ? middleBox.offsetWidth - filter.offsetWidth : (l < 0 ? 0 : l);
+			filter.style.left = l + 'px';
+			filter.style.top = t + 'px';
+			maxImg.style.left = -2 * l + 'px';
+			maxImg.style.top = -2 * t + 'px';
+		}
+	}
+	middleBox.onmouseout = function() {
+		filter.style.display = 'none';
+		maxBox.style.display = 'none';
+	}
+	for(let i = 0; i < aImg.length; i++) {
+		aImg[i].onmouseover = function() {
+			let src = this.firstElementChild.getAttribute('data-src');
+			middleImg.src = src;
+			maxImg.src = src;
+		}
+	}
+	function setCookie(key,val,expires) {
+		var d = new Date();
+		d.setDate(d.getDate() + expires);
+		document.cookie = key + '=' + val + ";path=/;expires=" + d;
+	}
+	var addCart = document.getElementById('addCart-btn');
+	var obj = {};
+	wrap.onclick = function(e) {
+		var e = e || event;
+		var target = e.target || e.srcElement;
+		// 点击加入购物车按钮时,存储cookie,跳转addSuccess.html页面
+		if(target.tagName == 'A' && target.className == 'addCart-btn') {
+			let buyNum = target.previousElementSibling.firstElementChild;
+			obj[id] = buyNum.value;
+			let jsonDate = JSON.stringify(obj);
+			setCookie('init',jsonDate,7);
+			location.href = 'addSuccess.html?id=' + id + ';num=' + obj[id];
+		}
+		//点击+数目增加存储cookie值
+		if(target.tagName == 'A' && target.className == 'btn-add') {
+			console.log(1)
+			if(!obj[id]) {
+				obj[id] = 2;
+			} else {
+				obj[id]++;
+			}
+			let buyNum = target.previousElementSibling;
+			buyNum.value = obj[id];
+			let jsonDate = JSON.stringify(obj);
+			setCookie('init',jsonDate,7);
+			// console.log(document.cookie)//init={"01":2}
+			// console.log(jsonDate)
+		}
+		//点击-时
+		if(target.tagName == 'A' && target.className == 'btn-reduce') {
+			if(!obj[id] || obj[id] <= 1) {
+				obj[id] = 1;
+			} else {
+				obj[id]--;
+			}
+			let buyNum = target.previousElementSibling.previousElementSibling;
+			buyNum.value = obj[id];
+			let jsonDate = JSON.stringify(obj);
+			setCookie('init',jsonDate,7);
+		}
+		if(target.tagName == 'A' && target.className == 'checkCart-btn') {
+			var buyNum = target.previousElementSibling.previousElementSibling.firstElementChild;
+			location.href = 'cart.html';
+			// location.href = 'cart.html?id=' + id + ';num=' + buyNum.value;
+			console.log(obj[id])
+		}
+	}
+
+</script>

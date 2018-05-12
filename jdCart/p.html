@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>p</title>
+</head>
+<body>
+	<div id="box">
+		<div class="box1 contect"></div>
+		<div class="box2"></div>
+		<div class="box1"></div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	var str = '';
+	str += '<div class="details-box clearfix" id="details">\
+			<div class="details-l">\
+				<div class="details-img">\
+					<a href="#">\
+						<img src="imgs/apple.jpg">\
+					</a>\
+				</div> \
+				<ul class="details-sm clearfix">\
+					<li>\
+						<img src="imgs/sm-pguo.jpg" alt="" data-src="imgs/apple.jpg">\
+					</li>\
+					<li>\
+						<img src="imgs/sm-pguo2.jpg" alt="" data-src="imgs/big-pguo2.jpg">\
+					</li>\
+					<li>\
+						<img src="imgs/sm-pguo3.jpg" alt="" data-src="imgs/big-pguo3.jpg">\
+					</li>\
+					<li>\
+						<img src="imgs/sm-pguo4.jpg" alt="" data-src="imgs/big-pguo4.jpg">\
+					</li>\
+				</ul>\
+			</div>\
+			<div class="details-info">\
+				<p class="details-tit">\
+				小米MIX2 全面屏游戏手机 6GB+64GB 黑色 全网通4G手机 双卡双待        \
+				</p>\
+				<p class="det-price">\
+					<span>京 东 价 </span>\
+					<span class="yuan">￥</span>\
+					<span class="details-price"> 2599.00</span>\
+				</p>\
+				<div class="choose-btns">\
+					<div class="choose-amount">\
+						<input type="text" class="buy-num" value="1">\
+						<a class="btn-add">+</a>\
+						<a class="btn-reduce">-</a>\
+					</div> \
+					<a class="addCart-btn">加入购物车</a>\
+				</div>\
+			</div>\
+		</div>'
+		document.body.innerHTML = str;
+</script>

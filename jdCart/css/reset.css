@@ -1,0 +1,75 @@
+/*重置*/
+body, h1, h2, h3, h4, h5, h6, hr, p,  dl, dt, dd, ul, ol, li, pre, form,  button, input, textarea, th, td, a {
+    margin: 0;
+    padding: 0;
+}
+body {
+    color: #333;
+    background-color: #fff;
+    font: 12px/150% tahoma,arial,'Microsoft YaHei','Hiragino Sans GB',"\u5b8b\u4f53",sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+button, input {
+    font-family: "Microsoft YaHei","Hiragino Sans GB";
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+/*.clearfix:after {
+    content:"";
+    display: table;
+    clear: both;
+}*/
+.clearfix {
+    *zoom: 1;/*兼容ie6 ,7*/
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+img {
+    border: 0;
+}
+/*
+input, select, textarea {
+    border: none;
+    outline: none;
+}
+*/
+textarea {
+    resize: none;
+}
+address, caption, b, em, strong, th,h1, h2, h3, h4, h5, h6 {
+    font-style: normal;
+    font-weight: normal;
+}
+ol, ul {
+    list-style: none;
+}
+/*p {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}*/
+a:link, a:visited {
+    color: #333;
+    text-decoration: none;
+}
+a:hover, a:active {
+    color: red;
+}
+a.pub-link {
+  display: block;
+  height: auto;
+}
+img.pub-img {
+  width: 100%;
+  display: block;
+}
+
